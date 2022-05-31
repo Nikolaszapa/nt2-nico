@@ -14,16 +14,30 @@
       </div>
     </div>
     <h2 class="mx-5">Acá se llamaría al componente lista</h2>
-    <!-- <AppLista/> -->
+    <!-- <AppLista :lista="lista"/> -->
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+
+components: {
+  //  AppLista,
+  },
+  data() {
+    return {
+      lista: [],
+      url: "http://localhost:3000/shopping-lists/2",
+    };
+  },
+  async created() {
+    const response = await fetch(this.url);
+    const results = await response.json();
+    console.log(results);
+    this.lista = results;
+  },
+}
 </script>
 
 <style>
-.amarillo {
-  background-color: yellow;
-}
 </style>
