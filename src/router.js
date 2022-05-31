@@ -16,6 +16,7 @@ const routes = [
         path: '/',
         name: 'home',
         component: AppHome,
+        meta: { login: true }
     },
     {
         path: '/login',
@@ -52,6 +53,12 @@ const routes = [
 
 const router = new VueRouter({
     routes
+})
+
+router.beforeEach((to, from, next) => {
+    console.log(to);
+
+    next();
 })
 
 export default router;
