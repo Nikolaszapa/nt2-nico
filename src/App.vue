@@ -12,11 +12,15 @@
       /></router-link>
     </div>
     <router-view></router-view>
+
+    <AppLista :precio="2559"></AppLista>
   </div>
 </template>
 
 <script>
+import AppLista from "./components/AppLista.vue";
 export default {
+  components: { AppLista },
   name: "App",
 };
 </script>
