@@ -9,34 +9,33 @@
           <router-link to="/realizar-compra" class="mx-5 boton"
             >Realizar compra</router-link
           >
-          <h5 class="mx-5 w-25"><u>Lista</u></h5>
         </div>
       </div>
     </div>
-    <h2 class="mx-5">Acá se llamaría al componente lista</h2>
-    <!-- <AppLista :lista="lista"/> -->
+    <AppLista :precio="2559" :nombre="nombreLista"></AppLista>
   </div>
 </template>
 
 <script>
+import AppLista from "@/components/AppLista.vue";
+import { useStore } from "../store/store.js";
 export default {
-
-components: {
-  //  AppLista,
+  components: {
+    AppLista,
   },
   data() {
     return {
-      lista: [],
-      url: "http://localhost:3000/shopping-lists/2",
+      nombreLista: "",
     };
   },
-  async created() {
-    const response = await fetch(this.url);
-    const results = await response.json();
-    console.log(results);
-    this.lista = results;
+  setup() {
+    const store = useStore();
+    return { store };
   },
-}
+  created() {
+    this.nombreLista = this.store.listaDeCompras.name;
+  },
+};
 </script>
 
 <style>

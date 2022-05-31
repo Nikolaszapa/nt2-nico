@@ -12,16 +12,23 @@
       /></router-link>
     </div>
     <router-view></router-view>
-
-    <AppLista :precio="2559"></AppLista>
   </div>
 </template>
 
 <script>
-import AppLista from "./components/AppLista.vue";
+import { useStore } from "@/store/store.js";
+
 export default {
-  components: { AppLista },
   name: "App",
+  setup() {
+    const store = useStore();
+    return { store };
+  },
+  created() {
+    if (this.store.validarUsuario("a@a.com", "admin")) {
+      this.store.cargarLista();
+    }
+  },
 };
 </script>
 

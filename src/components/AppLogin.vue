@@ -53,6 +53,7 @@ export default {
     validarLogin() {
       if (this.store.validarUsuario(this.mail, this.password)) {
         this.logeado = true;
+        this.store.cargarLista();
       }
     },
   },

@@ -1,6 +1,6 @@
 <template>
   <div class="col px-1">
-    <div class="nombreLista row mx-3">Lista</div>
+    <div class="nombreLista row mx-3">{{ nombre }}</div>
     <div class="lista mx-3 p-0 container">
       <div class="precio row px-1 m-0">Precio: ${{ precio }}</div>
       <div
@@ -54,6 +54,7 @@ let productos = [
 export default {
   props: {
     precio: Number,
+    nombre: String,
   },
   data() {
     return {
