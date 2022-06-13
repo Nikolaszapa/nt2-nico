@@ -1,7 +1,7 @@
 <template>
   <div>
-    <router-link to="/lista-de-compras" class="boton"
-      >Lista de compras</router-link
+    <router-link to="/lista-de-remedios" class="boton"
+      >Lista de remedios</router-link
     >
     <router-link to="/alacena-virtual" class="boton"
       >Alacena virtual</router-link

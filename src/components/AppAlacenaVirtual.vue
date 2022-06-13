@@ -36,7 +36,7 @@ export default {
     return { store };
   },
   created() {
-    this.nombreLista = this.store.listaDeCompras.name;
+    this.nombreLista = this.store.remedyList.name;
   },
 };
 </script>

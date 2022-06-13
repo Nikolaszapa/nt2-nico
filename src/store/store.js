@@ -1,9 +1,9 @@
 import { defineStore } from "pinia";
-//import { remedies } from "../data/remedies"
+import { remedies } from "../data/remedies"
 
-export const useStore = defineStore('pruebaContador', {
+export const useStore = defineStore('pharmStore', {
     state: () => ({
-        _remedyList: [],
+        _remedyList: remedies,
         _user: {
             mail: 'admin@admin.com',
             password: 'admin'
@@ -16,9 +16,7 @@ export const useStore = defineStore('pruebaContador', {
                 this._userValid = true;
                 console.log(this._userValid);
             }
-            console.group("validateUser()")
-            console.log("validateUser")
-            console.groupEnd()
+            
             return this._userValid;
         },
         cargarLista() {
@@ -26,7 +24,7 @@ export const useStore = defineStore('pruebaContador', {
         },
     },
     getters: {
-        listaDeCompras() {
+        remedyList() {
             return this._remedyList;
         }
     }

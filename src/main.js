@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from '@/router'
-import pinia from '@/store/index'
 
 Vue.config.productionTip = false
 
@@ -22,7 +21,12 @@ const options = {
       toast.addEventListener('mouseleave', VueSweetalert2.resumeTimer)
     }
 }
+
 Vue.use(VueSweetalert2, options);
+
+import { createPinia, PiniaVuePlugin } from 'pinia';
+const pinia = createPinia()
+Vue.use(PiniaVuePlugin);
 
 new Vue({
   router,

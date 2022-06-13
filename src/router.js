@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import AppHome from "./components/AppHome.vue";
-import AppListaDeCompras from "./components/AppListaDeCompras.vue";
+import RemedyListComponent from "./components/RemedyListComponet.vue";
 import AppAlacenaVirtual from "./components/AppAlacenaVirtual.vue";
 //import AppAgregarProductos from "./components/AppAgregarProductos.vue";
 import LoginComponent from "./components/LoginComponent";
@@ -29,9 +29,9 @@ const routes = [
         component: AppConfig,
     },
     {
-        path: '/lista-de-compras',
-        name: 'listaDeCompras',
-        component: AppListaDeCompras,
+        path: '/lista-de-remedios',
+        name: 'RemedyListComponent',
+        component: RemedyListComponent,
     },
     {
         path: '/alacena-virtual',
