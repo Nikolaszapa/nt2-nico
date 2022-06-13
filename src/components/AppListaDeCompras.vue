@@ -3,12 +3,8 @@
     <div class="display justify-content-center">
       <div class="p-3 mb-4">
         <div class="col text-center">
-          <router-link to="/agregar-productos" class="mx-5 boton"
-            >Agregar productos</router-link
-          >
-          <router-link to="/realizar-compra" class="mx-5 boton"
-            >Realizar compra</router-link
-          >
+          <router-link to="/agregar-productos" class="mx-5 boton">Agregar productos</router-link>
+          <router-link to="/realizar-compra" class="mx-5 boton">Realizar compra</router-link>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
   <div>
     <div class="m-4">
       <form>
-        <h1>Login: {{ logeado }}</h1>
+        <h1>Login: {{ logged }}</h1>
         <div class="mb-3">
           <label for="mail" class="form-label">Email address</label>
           <input
@@ -12,9 +12,7 @@
             id="mail"
             aria-describedby="emailHelp"
           />
-          <div id="emailHelp" class="form-text">
-            We'll never share your email with anyone else.
-          </div>
+          
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
@@ -25,7 +23,7 @@
             id="password"
           />
         </div>
-        <button v-on:click="validarLogin" type="submit" class="btn btn-primary">
+        <button v-on:click="validateLogin" type="submit" class="btn btn-primary">
           Login
         </button>
       </form>
@@ -37,12 +35,12 @@
 import { useStore } from "../store/store.js";
 
 export default {
-  name: "AppLogin",
+  name: "LoginComponent",
   data() {
     return {
       mail: null,
       password: null,
-      logeado: false,
+      logged: false,
     };
   },
   setup() {
@@ -50,10 +48,15 @@ export default {
     return { store };
   },
   methods: {
-    validarLogin() {
-      if (this.store.validarUsuario(this.mail, this.password)) {
-        this.logeado = true;
+    validateLogin() {
+      if (this.store.validateUser(this.mail, this.password)) {
+        this.logged = true;
         this.store.cargarLista();
+      }else{
+      this.$swal.fire({
+        icon: 'error',
+        title: 'PES-TA-ÑASTE'
+      });
       }
     },
   },

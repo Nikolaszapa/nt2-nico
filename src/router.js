@@ -5,7 +5,7 @@ import AppHome from "./components/AppHome.vue";
 import AppListaDeCompras from "./components/AppListaDeCompras.vue";
 import AppAlacenaVirtual from "./components/AppAlacenaVirtual.vue";
 //import AppAgregarProductos from "./components/AppAgregarProductos.vue";
-import AppLogin from "./components/AppLogin.vue";
+import LoginComponent from "./components/LoginComponent";
 import AppConfig from "./components/AppConfig.vue";
 
 
@@ -21,7 +21,7 @@ const routes = [
     {
         path: '/login',
         name: 'login',
-        component: AppLogin,
+        component: LoginComponent,
     },
     {
         path: '/config',
