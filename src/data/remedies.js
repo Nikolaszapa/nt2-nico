@@ -32,7 +32,7 @@ export const remedies = [{
     name: "Omeprazol",
     description: "Inhibe la secreción de ácido en el estómago. 30 cápsulas de omeprazol 20 mg.",
     image: require("../assets/Omeprazol.jpg"),
-    expirationDate: "2022-06-13"
+    expirationDate: "2022-06-14"
 },
 {
     name: "Redoxon",

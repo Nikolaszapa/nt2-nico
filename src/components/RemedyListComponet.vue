@@ -1,28 +1,70 @@
 <template>
-    <AppLista></AppLista>
+  <div class="col px-1 mt-5 mx-auto">
+    <div class="lista mx-auto p-0 container">
+      <div class="producto px-1 my-2" v-for="prod in remedyList" :key="prod.id">
+        <CardRemedyComponent
+          :name="prod.name"
+          :img="prod.image"
+          :description="prod.description"
+          :expiration="prod.expirationDate"
+        />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import AppLista from "@/components/AppLista.vue";
-import { useStore } from "../store/store.js";
+import { useStore } from "@/store/store";
+import CardRemedyComponent from "./CardRemedyComponent";
+
 export default {
   components: {
-    AppLista,
+    CardRemedyComponent,
   },
   data() {
     return {
-      nombreLista: "",
+      remedyList: [],
     };
   },
-  setup() {
-    const store = useStore();
-    return { store };
-  },
   created() {
-    this.nombreLista = this.store.remedyList.name;
-  }
+    this.remedyList = useStore().remedyList;
+  },
 };
 </script>
 
 <style>
+.nombreLista {
+  font-family: Verdana;
+  font-size: 14;
+}
+
+.lista {
+  background-color: #6cc4a1;
+  border: 1px solid #a0d995;
+  border-radius: 0.3rem;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.precio {
+  border-bottom: 1px solid #a0d995;
+}
+
+.sacar {
+  border: 1px solid black;
+  padding: 0;
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+}
+
+.producto {
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  align-items: center;
+}
 </style>

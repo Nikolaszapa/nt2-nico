@@ -55,7 +55,7 @@ export default {
       }else{
       this.$swal.fire({
         icon: 'error',
-        title: 'PES-TA-ÑASTE'
+        title: 'INTENTALO DE NUEVO'
       });
       }
     },

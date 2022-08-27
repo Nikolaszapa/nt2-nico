@@ -29,6 +29,7 @@ export default {
   data(){
    return {
       expiry: this.calculateExpirationDate(this.expiration),
+      image: this.requireImage(this.img)
     };
   },
    methods:{
@@ -45,6 +46,10 @@ export default {
             text: `Tiene tiempo hasta ${moment(this.expiration).add(1, 'M').format("DD/MM/YYYY")}`
         }
       }
+  },
+  requireImage(path){
+    console.log()
+    return path;
   }
   }
 };

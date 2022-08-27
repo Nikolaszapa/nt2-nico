@@ -2,6 +2,7 @@
   <div class="col px-1 mt-5 mx-auto">
     <div class="lista mx-auto p-0 container">
       <div class="producto px-1 my-2" v-for="prod in remedyList" :key="prod.id">
+        <pre>{{ prod }}</pre>
         <CardRemedyComponent
           :name="prod.name"
           :img="prod.image"

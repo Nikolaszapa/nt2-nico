@@ -21,8 +21,8 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <router-link to="/config"
-                  ><img class="iconoBoton" src="./assets/engranaje.png"
-                /></router-link>
+                  ><img class="iconoBoton" src="./assets/engranaje.png"/>
+                  </router-link>
               </li>
               <li class="nav-item">
                 <router-link to="/login"

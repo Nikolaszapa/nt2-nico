@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from '@/router'
-
+import Viconly from 'viconly'
+Vue.component("ic-viconly", Viconly)
 Vue.config.productionTip = false
 
 import "bootstrap/dist/css/bootstrap.css";
